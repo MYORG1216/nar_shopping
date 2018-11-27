@@ -1,26 +1,31 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
 
-		<script src="resources/sap-ui-core.js"
-				id="sap-ui-bootstrap"
-				data-sap-ui-libs="sap.m,sap.ui.layout"
-				data-sap-ui-theme="sap_belize_plus">
-		</script>
-		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+    <script src="https://sapui5.hana.ondemand.com/1.58.6/sap-ui-core.js"
+            id="sap-ui-bootstrap"
+            data-sap-ui-libs="sap.m,sap.ui.layout"
+            data-sap-ui-theme="sap_belize_plus"
+            data-sap-ui-xx-bindingSyntax="complex"
+            data-sap-ui-resourceroots='{"routing":"./"}'
+            data-sap-ui-preload='async'>
+    </script>
+    <!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
 
-		<script>
-				sap.ui.localResources("shoppingcart");
-				var app = new sap.m.App({initialPage:"idview11"});
-				var page = sap.ui.view({id:"idview11", viewName:"shoppingcart.view1", type:sap.ui.core.mvc.ViewType.JS});
-				app.addPage(page);
-				app.placeAt("content");
-		</script>
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            new sap.m.Shell({
+                app: new sap.ui.core.ComponentContainer({
+                    name: "routing"
+                })
+            }).placeAt("content");
+        });
+    </script>
 
-	</head>
-	<body class="sapUiBody" role="application">
-		<div id="content"></div>
-	</body>
+</head>
+<body class="sapUiBody" role="application">
+<div id="content"></div>
+</body>
 </html>
