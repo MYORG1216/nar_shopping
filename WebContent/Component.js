@@ -45,7 +45,6 @@ sap.ui.core.UIComponent.extend("routing.Component", {
         }
     },
     init: function () {
-        debugger;
         sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
         this.getRouter().initialize();
     }

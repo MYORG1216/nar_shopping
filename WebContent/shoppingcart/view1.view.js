@@ -1,6 +1,3 @@
-sap.ui.define(["sap/m/MenuItem"],(oMenuButton)=>{
-
-
 sap.ui.jsview("routing.shoppingcart.view1", {
 
     /** Specifies the Controller belonging to this View.
@@ -16,7 +13,6 @@ sap.ui.jsview("routing.shoppingcart.view1", {
      * @memberOf routing.shoppingcart.view1
      */
     createContent: function (oController) {
-        debugger;
         let oView = this;
         this.oObj = {
             "signedup": [{
@@ -45,17 +41,17 @@ sap.ui.jsview("routing.shoppingcart.view1", {
             text: "Profile",
             press: [oController.profileEvt, oController]
         });
-        this.menuBtnLogIn = new oMenuButton({
+        this.menuBtnLogIn = new sap.m.MenuItem({
             visible: true,
             text: "LogIn",
             press: [oController.logInEvt, oController]
         });
-        this.menuBtnSignUp = new oMenuButton({
+        this.menuBtnSignUp = new sap.m.MenuItem({
             visible: true,
             text: "SignUp",
             press: [oController.signUpEvt, oController]
         });
-        this.menuBtnLogOut = new oMenuButton({
+        this.menuBtnLogOut = new sap.m.MenuItem({
             visible: false,
             text: "LogOut",
             press: [oController.logOutEvt, oController]
@@ -65,7 +61,6 @@ sap.ui.jsview("routing.shoppingcart.view1", {
             text: {
                 parts: ["userModel>/loggedin/fname", "userModel>/loggedin/lname"],
                 formatter: (fname, lname) => {
-                    debugger;
 //		        	if (fname==""){
 //		        		return "User";
 //		        	}else{
@@ -200,7 +195,5 @@ sap.ui.jsview("routing.shoppingcart.view1", {
             ]
         });
     }
-
-});
 
 });
